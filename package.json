@@ -19,5 +19,8 @@
   "homepage": "https://github.com/clayton-scherer/highst-hospital#readme",
   "devDependencies": {
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
