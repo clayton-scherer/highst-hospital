@@ -1,0 +1,23 @@
+{
+  "name": "highst-hospital",
+  "version": "1.0.0",
+  "description": "1. Created High st. Hospital project folder.\r 2. Initialized a new local git repository.\r 3. Added tests and src folders to project folder.\r 4. Added pertinent files to the  corresponding folders.\r 5. Added a  node specific git ignore file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clayton-scherer/highst-hospital.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clayton-scherer/highst-hospital/issues"
+  },
+  "homepage": "https://github.com/clayton-scherer/highst-hospital#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
