@@ -1,15 +1,26 @@
 // Write my class(es), **export!
 
-class patient {
-  constructor(BLOOD_LEVEL, HEALTH_LEVEL) {
-    this._BLOOD_LEVEL = BLOOD_LEVEL;
-    this._HEALTH_LEVEL = HEALTH_LEVEL;
+class inHospital {
+  constructor(patient, employee) {
+      this._patient = patient;
+      this._employee = employee;
   }
-  get BLOOD_LEVEL() {
-    return this._BLOOD_LEVEL;
+  get patient() {
+      return 'is a Patient';
   }
-  get HEALTH_LEVEL() {
-    return this._HEALTH_LEVEL;
+  get employee() {
+      return 'is an Employee';
   }
 }
-module.exports = patient;
+module.exports = inHospital;
+
+/*
+class employee {
+  constructor(occupation) {
+    this._occupation = occupation;
+  }
+  get occupation() {
+    return 1;
+  }
+}
+module.exports = employee;*/
