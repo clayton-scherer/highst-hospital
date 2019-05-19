@@ -7,7 +7,7 @@ class Employee {
     this._idNumber = idNumber;
   }
   get isEmployee() {
-    return this._name + " " + "is an Employee";
+    return `${this._name} is an Employee`;
   }
   get idNumber() {
     return this._idNumber;
@@ -21,28 +21,48 @@ class Doctor extends Employee {
     this._salary = 90000;
   }
   get isDoctor() {
-    return this._name + " " + "is a Doctor";
+    return `${this._name} is a Doctor`;
   }
   get doctorSalary() {
-    return "Doctors make" + " " + this._salary;
+    return `Doctors make ${this._salary}`;
   }
   get speciality() {
     return this._speciality;
   }
 }
 
-class Nurse extends Employee {
-  constructor(name, idNumber, salary, patients) {
+class Surgeon extends Doctor {
+  constructor(name, idNumber, speciality, isOperating) {
     super(name, idNumber);
-    this._salary = salary;
+    this._speciality = speciality;
+    this._isOperating = isOperating;
+    this._salary = 120000;
+  }
+  get isSurgeon() {
+    return `${this._name} is a Surgeon`;
+  }
+  get surgeonSalary() {
+    return `Surgeons make ${this._salary}`;
+  }
+  get speciality() {
+    return this._speciality;
+  }
+  get isOperating() {
+    return this._isOperating;
+  }
+}
+
+class Nurse extends Employee {
+  constructor(name, idNumber, patients) {
+    super(name, idNumber);
     this._patients = patients;
     this._salary = 50000;
   }
   get isNurse() {
-    return this._name + " " + "is a Nurse";
+    return `${this._name} is a Nurse`;
   }
   get nurseSalary() {
-    return "Nurses make" + " " + this._salary;
+    return `Nurses make ${this._salary}`;
   }
   get hasPatients() {
     return this._patients;
@@ -61,6 +81,7 @@ changeiD(Jeff, 5);
 // var Jill = new Employee('Jill', 2305);
 console.log(Jeff);
 module.exports = {
+  Surgeon: Surgeon,
   Doctor: Doctor,
   Nurse: Nurse,
   Employee: Employee

@@ -9,13 +9,13 @@ class Patient {
     this._HEALTH_LEVEL = 10;
   }
   get patient() {
-    return this._name + " " + "is a Patient";
+    return `${this._name} is a Patient`;
   }
   get bloodlevel() {
     return this._BLOOD_LEVEL;
   }
   drawBlood() {
-    return this._BLOOD_LEVEL -= 10;
+    return (this._BLOOD_LEVEL -= 10);
   }
   get healthlevel() {
     return this._HEALTH_LEVEL;
@@ -37,6 +37,5 @@ var Simon = new Patient("Simon")
 
 console.log(Susan, Jenn, Simon);
 */
-
 
 module.exports = Patient;
