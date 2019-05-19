@@ -2,4 +2,3 @@
 const input = require("readline-sync");
 const patient = require("../src/hospital-patients");
 const employee = require("../src/hospital-employees");
-

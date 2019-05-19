@@ -13,11 +13,12 @@ class Employee {
     return this._idNumber;
   }
 }
+
 class Doctor extends Employee {
-  constructor(name, idNumber, salary, speciality) {
+  constructor(name, idNumber, speciality) {
     super(name, idNumber);
-    this._salary = salary;
     this._speciality = speciality;
+    this._salary = 90000;
   }
   get isDoctor() {
     return this._name + " " + "is a Doctor";
@@ -29,11 +30,13 @@ class Doctor extends Employee {
     return this._speciality;
   }
 }
-/*
+
 class Nurse extends Employee {
   constructor(name, idNumber, salary, patients) {
-    super(name, idNumber, salary);
+    super(name, idNumber);
+    this._salary = salary;
     this._patients = patients;
+    this._salary = 50000;
   }
   get isNurse() {
     return this._name + " " + "is a Nurse";
@@ -46,15 +49,19 @@ class Nurse extends Employee {
   }
 }
 
+var Jeff = new Employee("Jeff", 6768);
 
-/*
-var Jeff = new Employee('Jeff', 6768);
-var Jack = new Employee('Jack', 9837);
-var Jill = new Employee('Jill', 2305);
+// Functions are named the actions you want to accomplish. Method is a function that lives on an object.
+function changeiD(employee, number) {
+  employee._idNumber = number;
+}
 
-
-console.log(Jeff, Jack, Jill);
-*/
-module.exports = Employee;
-module.exports = Doctor;
-//module.exports = Nurse;
+changeiD(Jeff, 5);
+// var Jack = new Employee('Jack', 9837);
+// var Jill = new Employee('Jill', 2305);
+console.log(Jeff);
+module.exports = {
+  Doctor: Doctor,
+  Nurse: Nurse,
+  Employee: Employee
+};

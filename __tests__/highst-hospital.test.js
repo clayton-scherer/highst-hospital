@@ -1,22 +1,29 @@
 // Define my requirements, then describe and write my tests.
-const employee = require("../src/hospital-employees");
+// If i can pull class by class from another file.
+const employeeClasses = require("../src/hospital-employees");
 const patient = require("../src/hospital-patients");
 
 describe("patient", () => {
   test("should return 'is a patient' status", () => {
-    const underTest = new patient("Jane", 20, 10);
+    const underTest = new patient("Jane");
     const actual = underTest.patient;
     expect(actual).toBe("Jane" + " " + "is a Patient");
   });
 
   test("should return patient blood level", () => {
-    const underTest = new patient(0, 20, 10);
+    const underTest = new patient("Jane");
+    const actual = underTest.bloodlevel;
+    expect(actual).toEqual(20);
+  });
+
+  test("should return patient blood level", () => {
+    const underTest = new patient("Jane");
     const actual = underTest.bloodlevel;
     expect(actual).toEqual(20);
   });
 
   test("should return patient health level", () => {
-    const underTest = new patient(0, 20, 10);
+    const underTest = new patient("Jane");
     const actual = underTest.healthlevel;
     expect(actual).toEqual(10);
   });
@@ -24,13 +31,13 @@ describe("patient", () => {
 
 describe("employee", () => {
   test("should return 'is an Employee' status", () => {
-    const underTest = new employee("John", 2532);
+    const underTest = new employeeClasses.Employee("John");
     const actual = underTest.isEmployee;
     expect(actual).toBe("John" + " " + "is an Employee");
   });
 
   test("Should return employee ID number.", () => {
-    const underTest = new employee("Shane", 5437);
+    const underTest = new employeeClasses.Employee("John", 5437);
     const actual = underTest.idNumber;
     expect(actual).toEqual(5437);
   });
@@ -38,53 +45,52 @@ describe("employee", () => {
 
 describe("doctor", () => {
   test("should return 'is a doctor' status", () => {
-    const underTest = new employee("Mike");
+    const underTest = new employeeClasses.Doctor("Mike");
     const actual = underTest.isDoctor;
     expect(actual).toBe("Mike" + " " + "is a Doctor");
   });
 
   test("Should return employee ID number.", () => {
-    const underTest = new employee("Mike", 123);
+    const underTest = new employeeClasses.Doctor("Mike", 6587);
     const actual = underTest.idNumber;
-    expect(actual).toEqual(123);
+    expect(actual).toEqual(6587);
   });
 
   test("Should return Mikes' salary.", () => {
-    const underTest = new employee("Mike", 123, "90,000");
+    const underTest = new employeeClasses.Doctor("Mike", 123);
     const actual = underTest.doctorSalary;
-    expect(actual).toBe("Doctors make" + " " + "90,000");
+    expect(actual).toBe("Doctors make" + " " + 90000);
   });
 
   test("Should return Mikes' speciality.", () => {
-    const underTest = new employee("Mike", 123, "90,000", "Oncology");
+    const underTest = new employeeClasses.Doctor("Mike", 123, "Oncology");
     const actual = underTest.speciality;
     expect(actual).toBe("Oncology");
   });
 });
-/*
+
 describe("nurse", () => {
   test("should return 'is a nurse' status", () => {
-    const underTest = new employee("Jackie");
+    const underTest = new employeeClasses.Nurse("Jackie");
     const actual = underTest.isNurse;
-    expect(actual).toBe("Jackie" + " " + "is a Nurse");
+    expect(actual).toBe(`Jackie is a Nurse`);
   });
 
   test("Should return employee ID number.", () => {
-    const underTest = new employee("Jackie", 2489);
+    const underTest = new employeeClasses.Nurse("Jackie", 2489);
     const actual = underTest.idNumber;
     expect(actual).toEqual(2489);
   });
 
   test("Should return Jackies' salary.", () => {
-    const underTest = new employee("Jackie", 2489, "50,000");
+    const underTest = new employeeClasses.Nurse("Jackie", 2489);
     const actual = underTest.nurseSalary;
-    expect(actual).toBe("Nurses make" + " " + "50,000");
+    expect(actual).toBe("Nurses make" + " " + 50000);
   });
 
   test("Should return Jackies' patients.", () => {
-    const underTest = new employee("Jackie", 2489, "50,000", "Jenn");
+    const underTest = new employeeClasses.Nurse("Jackie", 2489, 0, 3);
     const actual = underTest.hasPatients;
-    expect(actual).toBe("Jenn");
+    expect(actual).toEqual(3);
   });
 });
-*/
