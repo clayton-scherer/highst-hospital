@@ -14,6 +14,19 @@ class Employee {
   }
 }
 
+class Custodian extends Employee {
+  constructor(name, idNumber) {
+    super(name, idNumber);
+    this._salary = 40000;
+  }
+  get isCustodian() {
+    return `${this._name} is a Custodian`;
+  }
+  get custodianSalary() {
+    return `Custodians make ${this._salary}`;
+  }
+}
+
 class Doctor extends Employee {
   constructor(name, idNumber, speciality) {
     super(name, idNumber);
@@ -84,5 +97,6 @@ module.exports = {
   Surgeon: Surgeon,
   Doctor: Doctor,
   Nurse: Nurse,
-  Employee: Employee
+  Employee: Employee,
+  Custodian: Custodian
 };

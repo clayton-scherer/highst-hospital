@@ -37,6 +37,27 @@ describe("employee", () => {
   });
 });
 
+describe("custodian", () => {
+  test("should return is a custodian status", () => {
+    const underTest = new employeeClasses.Custodian("Rick");
+    const actual = underTest.isCustodian;
+    expect(actual).toBe("Rick is a Custodian");
+  });
+
+  test("should return is a custodian status", () => {
+    const underTest = new employeeClasses.Custodian("Rick", 9732);
+    const actual = underTest.idNumber;
+    expect(actual).toEqual(9732);
+  });
+
+  test("Should return custodian salary.", () => {
+    const underTest = new employeeClasses.Custodian("Rick", 9732);
+    const actual = underTest.custodianSalary;
+    expect(actual).toBe(`Custodians make 40000`);
+  });
+
+});
+
 describe("doctor", () => {
   test("should return 'is a doctor' status", () => {
     const underTest = new employeeClasses.Doctor("Mike");
