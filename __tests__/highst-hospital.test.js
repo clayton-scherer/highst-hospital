@@ -37,25 +37,44 @@ describe("employee", () => {
   });
 });
 
-describe("custodian", () => {
-  test("should return is a custodian status", () => {
-    const underTest = new employeeClasses.Custodian("Rick");
-    const actual = underTest.isCustodian;
-    expect(actual).toBe("Rick is a Custodian");
+describe("Janitor", () => {
+  test("should return is a Janitor status", () => {
+    const underTest = new employeeClasses.Janitor("Rick");
+    const actual = underTest.isJanitor;
+    expect(actual).toBe("Rick is a Janitor");
   });
 
-  test("should return is a custodian status", () => {
-    const underTest = new employeeClasses.Custodian("Rick", 9732);
+  test("should return employee Id Number", () => {
+    const underTest = new employeeClasses.Janitor("Rick", 9732);
     const actual = underTest.idNumber;
     expect(actual).toEqual(9732);
   });
 
-  test("Should return custodian salary.", () => {
-    const underTest = new employeeClasses.Custodian("Rick", 9732);
-    const actual = underTest.custodianSalary;
-    expect(actual).toBe(`Custodians make 40000`);
+  test("Should return Janitor salary.", () => {
+    const underTest = new employeeClasses.Janitor("Rick", 9732);
+    const actual = underTest.janitorSalary;
+    expect(actual).toBe(`Janitors make 40000`);
+  });
+});
+
+describe("Receptionist", () => {
+  test("should return is a Receptionist status", () => {
+    const underTest = new employeeClasses.Receptionist("Sally");
+    const actual = underTest.isReceptionist;
+    expect(actual).toBe("Sally is a Receptionist");
   });
 
+  test("should return Id Number", () => {
+    const underTest = new employeeClasses.Receptionist("Sally", 12345);
+    const actual = underTest.idNumber;
+    expect(actual).toEqual(12345);
+  });
+
+  test("Should return Receptionist salary.", () => {
+    const underTest = new employeeClasses.Receptionist("Sally", 12345);
+    const actual = underTest.receptionistSalary;
+    expect(actual).toBe(`Receptionists make 45000`);
+  });
 });
 
 describe("doctor", () => {
