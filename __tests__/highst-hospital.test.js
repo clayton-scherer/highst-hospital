@@ -85,7 +85,7 @@ describe("Receptionist", () => {
   test("Should return if Receptionist is occupied with a phone call.", () => {
     const underTest = new employeeClasses.Receptionist("Sally", 12345, true);
     const actual = underTest.onPhoneCall;
-    expect(actual).toBe(true);
+    expect(actual).toBe(`This Receptionist is currently on a phone call.`);
   });
 });
 

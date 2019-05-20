@@ -48,7 +48,11 @@ class Receptionist extends Employee {
     return `Receptionists make ${this._salary}`;
   }
   get onPhoneCall() {
-    return this._isOccupied;
+    if (this._isOccupied === true) {
+      return `This Receptionist is currently on a phone call.`;
+    } else {
+      return `This Receptionist is unoccupied.`;
+    }
   }
 }
 
