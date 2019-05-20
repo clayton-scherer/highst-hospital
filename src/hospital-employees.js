@@ -15,8 +15,9 @@ class Employee {
 }
 
 class Janitor extends Employee {
-  constructor(name, idNumber) {
+  constructor(name, idNumber, cleaning) {
     super(name, idNumber);
+    this._cleaning = cleaning;
     this._salary = 40000;
   }
   get isJanitor() {
@@ -25,11 +26,19 @@ class Janitor extends Employee {
   get janitorSalary() {
     return `Janitors make ${this._salary}`;
   }
+  get janitorCleaning() {
+    if (this._cleaning === true) {
+      return `This Janitor is currently sweeping.`;
+    } else {
+      return `This Janitor is unoccupied.`;
+    }
+  }
 }
 
 class Receptionist extends Employee {
-  constructor(name, idNumber) {
+  constructor(name, idNumber, isOccupied) {
     super(name, idNumber);
+    this._isOccupied = isOccupied;
     this._salary = 45000;
   }
   get isReceptionist() {
@@ -37,6 +46,9 @@ class Receptionist extends Employee {
   }
   get receptionistSalary() {
     return `Receptionists make ${this._salary}`;
+  }
+  get onPhoneCall() {
+    return this._isOccupied;
   }
 }
 
@@ -90,12 +102,10 @@ class Surgeon extends Doctor {
   get speciality() {
     return this._speciality;
   }
-  get isOperating() {
+  get inSurgery() {
     return this._isOperating;
   }
 }
-
-
 
 var Jeff = new Employee("Jeff", 6768);
 
@@ -111,12 +121,8 @@ console.log(Jeff);
 module.exports = {
   Employee: Employee,
   Janitor: Janitor,
-  Receptionist : Receptionist,
+  Receptionist: Receptionist,
   Nurse: Nurse,
   Doctor: Doctor,
-  Surgeon: Surgeon,
-  
-  
-  
-  
+  Surgeon: Surgeon
 };
