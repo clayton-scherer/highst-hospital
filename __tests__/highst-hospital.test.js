@@ -82,7 +82,7 @@ describe("surgeon", () => {
     expect(actual).toBe(`Surgeons make 120000`);
   });
 
-  test("Should return Mikes' speciality.", () => {
+  test("Should return Surgeons' speciality.", () => {
     const underTest = new employeeClasses.Surgeon("Mark", 777, "Cardio");
     const actual = underTest.speciality;
     expect(actual).toBe("Cardio");

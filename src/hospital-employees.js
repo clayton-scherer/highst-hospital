@@ -75,8 +75,8 @@ var Jeff = new Employee("Jeff", 6768);
 function changeiD(employee, number) {
   employee._idNumber = number;
 }
+changeiD(Jeff, 123);
 
-changeiD(Jeff, 5);
 // var Jack = new Employee('Jack', 9837);
 // var Jill = new Employee('Jill', 2305);
 console.log(Jeff);
