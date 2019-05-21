@@ -11,24 +11,59 @@ textColors = [
 ];
 
 var Staff = {};
-Staff.Janitor = new employeeClasses.Janitor("Mike", 907, true);
-Staff.VampireJanitor = new employeeClasses.VampireJanitor("Savi", 743, false);
-Staff.Receptionist = new employeeClasses.Receptionist("Mark", 3765, false);
-Staff.Receptionist2 = new employeeClasses.Receptionist("Sally", 8546, true);
+Staff.Janitor = new employeeClasses.Janitor(
+  "Mike",
+  907,
+  "This Janitor is currently sweeping."
+);
+Staff.VampireJanitor = new employeeClasses.VampireJanitor(
+  "Savi",
+  743,
+  "This Janitor is unoccupied."
+);
+Staff.Receptionist = new employeeClasses.Receptionist(
+  "Mark",
+  3765,
+  "This Receptionist is unoccupied."
+);
+Staff.Receptionist2 = new employeeClasses.Receptionist(
+  "Sally",
+  8546,
+  "This Receptionist is currently on a phone call."
+);
 Staff.Nurse = new employeeClasses.Nurse("Susan", 9752, "Viki");
 Staff.Doctor = new employeeClasses.Doctor("Brutus", 75340, "Cardio");
 Staff.Surgeon = new employeeClasses.Surgeon(
   "Christoph",
   98754,
   "Neurology",
-  true
+  `This Surgeon is currently in surgery.`
 );
 Staff.Surgeon2 = new employeeClasses.Surgeon(
   "Alexander",
   94637,
   "OBGYN",
-  false
+  `This Surgeon is unoccupied.`
 );
 
 // .table(Staff.Surgeon); prints exclusively Christoph's table.
 console.table(Staff);
+
+var CanAdministerCare = [
+  Staff.Nurse,
+  Staff.Doctor,
+  Staff.Surgeon,
+  Staff.Surgeon2
+];
+console.table(CanAdministerCare);
+
+var CanDrawBlood = [Staff.Nurse, Staff.Doctor, Staff.Surgeon, Staff.Surgeon2];
+console.table(CanDrawBlood);
+
+var Care = {};
+Care.Patient1 = new patient("Matt");
+Care.Patient2 = new patient("Ellie");
+Care.Patient3 = new patient("Lauren");
+Care.Patient4 = new patient("Ricky");
+Care.Patient5 = new patient("Julian");
+console.table(Care);

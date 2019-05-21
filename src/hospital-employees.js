@@ -1,5 +1,4 @@
 // Write my employee class,... *export!
-
 // Add RNG to employee constructor.
 class Employee {
   constructor(name, idNumber) {
