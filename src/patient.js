@@ -1,7 +1,7 @@
 // Write my patient class,...
 
 class Patient {
-  constructor(name, bL, hL) {
+  constructor(name) {
     this._name = name;
     this._BLOOD_LEVEL = 20;
     this._HEALTH_LEVEL = 10;

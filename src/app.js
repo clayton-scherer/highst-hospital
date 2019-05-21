@@ -1,11 +1,11 @@
 // Require statements at head, handle input and ouput of application.
 const userInput = require("readline-sync");
-const patient = require("../src/hospital-patients");
-const employeeClasses = require("../src/hospital-employees");
+const patient = require("./patient");
+const employeeClasses = require("./employee");
 const chalk = require("chalk");
 
 console.log(
-  "\nWelcome the the High St Hospitol Data Records System. \nPlease make a selection from below.",
+  "\nWelcome t0 the High St Hospitol Data Records System. \nPlease make a selection from below.",
   "\n1) Staff records",
   "\n2) Current Patients checked in",
   "\n3) Current Staff Assigned to care",
