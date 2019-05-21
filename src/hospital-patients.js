@@ -1,22 +1,21 @@
 // Write my patient class,...
 
 class Patient {
-  constructor(name) {
+  constructor(name, bL, hL) {
     this._name = name;
-    this._BLOOD_LEVEL = 20;
-    this._HEALTH_LEVEL = 10;
+    this._defaultBlood = 20;
+    this._BLOOD_LEVEL = bL
+    this._defaultHealth = 10;
+    this._HEALTH_LEVEL = hL
   }
   get patient() {
     return `${this._name} is a Patient`;
   }
   get bloodlevel() {
-    return this._BLOOD_LEVEL;
-  }
-  drawBlood() {
-    return (this._BLOOD_LEVEL -= 10);
+    return this._defaultBlood;
   }
   get healthlevel() {
-    return this._HEALTH_LEVEL;
+    return this._defaultHealth;
   }
 }
 module.exports = Patient;

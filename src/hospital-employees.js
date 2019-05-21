@@ -35,10 +35,19 @@ class Janitor extends Employee {
   }
 }
 
+class VampireJanitor extends Janitor {
+  constructor(name, idNumber, cleaning) {
+    super(name, idNumber, cleaning);
+  }
+  get isVampireJanitor() {
+    return `${this._name} is a VampireJanitor`;
+  }
+}
+
 class Receptionist extends Employee {
-  constructor(name, idNumber, isOccupied) {
+  constructor(name, idNumber, onPhoneCall) {
     super(name, idNumber);
-    this._isOccupied = isOccupied;
+    this._onPhoneCall = onPhoneCall;
     this._salary = 45000;
   }
   get isReceptionist() {
@@ -47,7 +56,7 @@ class Receptionist extends Employee {
   get receptionistSalary() {
     return `Receptionists make ${this._salary}`;
   }
-  get onPhoneCall() {
+  get phoneCall() {
     if (this._isOccupied === true) {
       return `This Receptionist is currently on a phone call.`;
     } else {
@@ -69,7 +78,7 @@ class Nurse extends Employee {
     return `Nurses make ${this._salary}`;
   }
   get hasPatients() {
-    return this._patients;
+    return `This Nurse is caring for ${this._patients} patients`;
   }
 }
 
@@ -107,24 +116,35 @@ class Surgeon extends Doctor {
     return this._speciality;
   }
   get inSurgery() {
-    return this._isOperating;
+    if (this._isOperating === true) {
+      return `This Surgeon is currently in surgery.`;
+    } else {
+      return `This Surgeon is unoccupied.`;
+    }
   }
 }
 
-var Jeff = new Employee("Jeff", 6768);
+/*
+ withdrawMultipleOfTen(withdrawalAmount) {
+    if (withdrawalAmount % 10 !== 0) {
+      throw new Error("Only multiples of 10!");
+    }
+    this.withdraw(withdrawalAmount);
+  }
+  */
 
-// Functions are named the actions you want to accomplish. Method is a function that lives on an object.
+function drawBlood(amount) {}
+
+/* Functions are named the actions you want to accomplish. Method is a function that lives on an object.
 function changeiD(employee, number) {
   employee._idNumber = number;
 }
 changeiD(Jeff, 123);
-
-// var Jack = new Employee('Jack', 9837);
-// var Jill = new Employee('Jill', 2305);
-console.log(Jeff);
+*/
 module.exports = {
   Employee: Employee,
   Janitor: Janitor,
+  VampireJanitor : VampireJanitor,
   Receptionist: Receptionist,
   Nurse: Nurse,
   Doctor: Doctor,
