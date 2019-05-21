@@ -4,6 +4,17 @@ const patient = require("../src/hospital-patients");
 const employeeClasses = require("../src/hospital-employees");
 const chalk = require("chalk");
 
+console.log(
+  "\nWelcome the the High St Hospitol Data Records System. \nPlease make a selection from below.",
+  "\n1) Staff records",
+  "\n2) Current Patients checked in",
+  "\n3) Current Staff Assigned to care",
+  "\n4) Current Staff Collecting Blood for the Red Cross"
+);
+const userInput = input.question(
+  "\nWhat information would you like to access?"
+);
+
 textColors = [
   (blueText = chalk.blue),
   (redText = chalk.red),
@@ -45,9 +56,7 @@ Staff.Surgeon2 = new employeeClasses.Surgeon(
   "OBGYN",
   `This Surgeon is unoccupied.`
 );
-
 // .table(Staff.Surgeon); prints exclusively Christoph's table.
-console.table(Staff);
 
 var CanAdministerCare = [
   Staff.Nurse,
@@ -55,15 +64,17 @@ var CanAdministerCare = [
   Staff.Surgeon,
   Staff.Surgeon2
 ];
-console.table(CanAdministerCare);
 
 var CanDrawBlood = [Staff.Nurse, Staff.Doctor, Staff.Surgeon, Staff.Surgeon2];
-console.table(CanDrawBlood);
 
 var Care = {};
-Care.Patient1 = new patient("Matt");
-Care.Patient2 = new patient("Ellie");
-Care.Patient3 = new patient("Lauren");
-Care.Patient4 = new patient("Ricky");
-Care.Patient5 = new patient("Julian");
+Care.Room_210 = new patient("Matt");
+Care.Room_381 = new patient("Ellie");
+Care.Room_101 = new patient("Lauren");
+Care.Room_215 = new patient("Ricky");
+Care.Room_341 = new patient("Julian");
+
+console.table(Staff);
 console.table(Care);
+console.table(CanAdministerCare);
+console.table(CanDrawBlood);
