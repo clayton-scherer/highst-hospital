@@ -1,5 +1,5 @@
 // Require statements at head, handle input and ouput of application.
-const readLine = require("readline-sync");
+const input = require("readline-sync");
 const chalk = require("chalk");
 const Patient = require("../src/patient");
 const Employee = require("../src/employee");
@@ -15,13 +15,10 @@ textColors = [
   (redText = chalk.red),
   (greenText = chalk.green)
 ];
-const mainMenu = console.log(
+console.log(
   `\nWelcome to High St Hospitals' department of Records and Data.
    \nWe pride ourselves on having a sleek yet functional data management system.`
 );
-
-//  const readLine = input.question("\n")
- 
 
 const patients = {};
 patients.Room_101 = new Patient("Matt");
@@ -60,7 +57,17 @@ const canDrawBlood = [
   Staff.Neuro_Surgeon
 ];
 
-console.table(Staff);
-console.table(patients);
-console.table(canAdministerCare);
-console.table(canDrawBlood);
+const userInput = input.question(`\n
+Enter ${greenText("Staff")} to list our current employees.\n 
+Enter ${redText("Patients")} to list our current patients.\n`);
+
+switch (userInput) {
+  case "Staff":
+    console.log(`These are our current full time ${greenText("Staff")}.\n`);
+    console.table(Staff);
+    break;
+  case "Patients":
+    console.log(`These are our current ${redText("Patients")}.\n`);
+    console.table(patients);
+    break;
+}
