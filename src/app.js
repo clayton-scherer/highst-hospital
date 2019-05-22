@@ -4,6 +4,7 @@ const patient = require("../src/hospital-patients");
 const employeeClasses = require("../src/hospital-employees");
 const chalk = require("chalk");
 
+/*
 console.log(
   "\nWelcome the the High St Hospitol Data Records System. \nPlease make a selection from below.",
   "\n1) Staff records",
@@ -11,9 +12,11 @@ console.log(
   "\n3) Current Staff Assigned to care",
   "\n4) Current Staff Collecting Blood for the Red Cross"
 );
-const userInput = input.question(
+let userInput = input.question(
   "\nWhat information would you like to access?"
 );
+
+*/
 
 textColors = [
   (blueText = chalk.blue),

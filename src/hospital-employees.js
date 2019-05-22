@@ -1,5 +1,5 @@
 // Write my employee class,... *export!
-// Add RNG to employee constructor.
+// Add separate files for each Class to new JS files.
 class Employee {
   constructor(name, idNumber) {
     this._name = name;
@@ -12,13 +12,14 @@ class Employee {
     return this._idNumber;
   }
 }
-
+// Is, has or can should return boolean values.
 class Janitor extends Employee {
   constructor(name, idNumber, cleaning) {
     super(name, idNumber);
     this._cleaning = cleaning;
     this._salary = 40000;
   }
+  // Is, has or can should return boolean values. Rename isJanitor.
   get isJanitor() {
     return `${this._name} is a Janitor`;
   }
@@ -114,23 +115,14 @@ class Surgeon extends Doctor {
   get speciality() {
     return this._speciality;
   }
-  get inSurgery() {
+  get isOperating() {
     if (this._isOperating === true) {
-      return `This Surgeon is currently in surgery.`;
+      return `This Surgeon is currently in surgery.`; // Fix into return isOperating and move <-- to app logic.
     } else {
       return `This Surgeon is unoccupied.`;
     }
   }
 }
-
-/*
- withdrawMultipleOfTen(withdrawalAmount) {
-    if (withdrawalAmount % 10 !== 0) {
-      throw new Error("Only multiples of 10!");
-    }
-    this.withdraw(withdrawalAmount);
-  }
-  */
 
 function drawBlood(amount) {}
 
@@ -143,7 +135,7 @@ changeiD(Jeff, 123);
 module.exports = {
   Employee: Employee,
   Janitor: Janitor,
-  VampireJanitor : VampireJanitor,
+  VampireJanitor: VampireJanitor,
   Receptionist: Receptionist,
   Nurse: Nurse,
   Doctor: Doctor,

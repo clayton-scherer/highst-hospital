@@ -1,5 +1,5 @@
 // Write my patient class,...
-
+// Make bL and hL constants outside of class Patient.
 class Patient {
   constructor(name, bL, hL) {
     this._name = name;
