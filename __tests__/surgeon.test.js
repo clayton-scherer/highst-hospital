@@ -4,7 +4,7 @@ describe("surgeon", () => {
   test("should return is a surgeon status.", () => {
     const underTest = new Surgeon("Mark");
     const actual = underTest.surgeon;
-    expect(actual).toBe("Mark is a Surgeon");
+    expect(actual).toBe("Mark");
   });
 
   test("Should return employee ID number.", () => {
@@ -16,7 +16,7 @@ describe("surgeon", () => {
   test("Should return surgeon salary.", () => {
     const underTest = new Surgeon("Mark", 777);
     const actual = underTest.surgeonSalary;
-    expect(actual).toBe(`Surgeons make 120000`);
+    expect(actual).toEqual(120000);
   });
 
   test("Should return Surgeons' speciality.", () => {

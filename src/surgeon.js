@@ -7,10 +7,10 @@ class Surgeon extends Doctor {
     this._salary = 120000;
   }
   get surgeon() {
-    return `${this._name} is a Surgeon`;
+    return this._name;
   }
   get surgeonSalary() {
-    return `Surgeons make ${this._salary}`;
+    return this._salary;
   }
   get speciality() {
     return this._speciality;

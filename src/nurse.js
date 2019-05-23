@@ -6,13 +6,13 @@ class Nurse extends Employee {
     this._salary = 50000;
   }
   get nurse() {
-    return `${this._name} is a Nurse`;
+    return this._name;
   }
   get nurseSalary() {
-    return `Nurses make ${this._salary}`;
+    return this._salary;
   }
   get patients() {
-    return `This Nurse is caring for ${this._patients} patients`;
+    return this._patients;
   }
 }
 module.exports = Nurse;

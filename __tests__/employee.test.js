@@ -4,7 +4,7 @@ describe("employee", () => {
   test("should return is an Employee status.", () => {
     const underTest = new Employee("John");
     const actual = underTest.employee;
-    expect(actual).toBe("John is an Employee");
+    expect(actual).toBe("John");
   });
 
   test("Should return employee ID number.", () => {
