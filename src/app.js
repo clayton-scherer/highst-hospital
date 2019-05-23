@@ -1,7 +1,6 @@
 // Require statements at head, handle input and ouput of application.
 const input = require("readline-sync");
 const chalk = require("chalk");
-<<<<<<< HEAD
 
 /*
 console.log(
@@ -14,16 +13,6 @@ console.log(
 let userInput = input.question(
   "\nWhat information would you like to access?"
 );
-=======
-const Patient = require("../src/patient");
-const Employee = require("../src/employee");
-const Janitor = require("../src/janitor");
-const VampireJanitor = require("../src/vampire-janitor");
-const Receptionist = require("../src/receptionist");
-const Nurse = require("../src/nurse");
-const Doctor = require("../src/doctor");
-const Surgeon = require("../src/surgeon");
->>>>>>> 5eb40906836748833d06097992379ff80da30ed2
 
 */
 
@@ -87,4 +76,6 @@ switch (userInput) {
     console.log(`These are our current ${redText("Patients")}.\n`);
     console.table(patients);
     break;
+  default:
+    console.log("Please input an appropriate");
 }
