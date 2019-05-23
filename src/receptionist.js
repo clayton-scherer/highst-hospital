@@ -5,9 +5,6 @@ class Receptionist extends Employee {
     this._phoneCall = phoneCall;
     this._salary = 45000;
   }
-  get receptionist() {
-    return this._name;
-  }
   get receptionistSalary() {
     return this._salary;
   }

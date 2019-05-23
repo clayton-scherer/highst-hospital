@@ -45,25 +45,12 @@ const canAdministerCare = [
   Staff.Surgeon
 ];
 
-console.log(
-  `\nWelcome to High St Hospitals' department of Records and Data.\n
-   \nWe pride ourselves on having a ${underlineText(
-     "sleek"
-   )} yet ${underlineText("functional")} data management system.\n
-   \nTry out our proprietary ${cyanText(
-     "color-coded"
-   )} menu to navigate through our records!!!`
-);
+welcomeMessage();
 
 let loopCondition = true;
 // Needs to return to userInput after each case is evaluated... currently infinite loop - see line 84.
 while (loopCondition) {
-  const userInput = input.question(`\n
-Enter ${greenText("Staff")} to list our current employees.\n 
-Enter ${greenText("Patients")} to list our current patients.\n
-Enter ${blueText("1")} for our Staff qualified to draw blood.\n
-Enter ${blueText("2")} for our staff qualified to care for our patients.\n
-Enter ${redText("3")} to exit our robust databse.\n`);
+  const userInput = mainMenu();
 
   switch (userInput) {
     case "Staff":
@@ -98,4 +85,22 @@ Enter ${redText("3")} to exit our robust databse.\n`);
     default:
       console.log(`\nPlease enter a vaild search paramater.\n`);
   } //holder to prevent infinite while loop?...
+}
+function mainMenu() {
+  return input.question(`\n
+Enter ${greenText("Staff")} to list our current employees.\n 
+Enter ${greenText("Patients")} to list our current patients.\n
+Enter ${blueText("1")} for our Staff qualified to draw blood.\n
+Enter ${blueText("2")} for our staff qualified to care for our patients.\n
+Enter ${redText("3")} to exit our robust databse.\n >> :  `);
+}
+
+function welcomeMessage() {
+  console.log(`\nWelcome to High St Hospitals' department of Records and Data.\n
+   \nWe pride ourselves on having a ${underlineText(
+     "sleek"
+   )} yet ${underlineText("functional")} data management system.\n
+   \nTry out our proprietary ${cyanText(
+     "color-coded"
+   )} menu to navigate through our records!!!`);
 }

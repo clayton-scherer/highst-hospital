@@ -5,9 +5,6 @@ class Janitor extends Employee {
     this._cleaning = cleaning;
     this._salary = 40000;
   }
-  get janitor() {
-    return this._name;
-  }
   get janitorSalary() {
     return this._salary;
   }

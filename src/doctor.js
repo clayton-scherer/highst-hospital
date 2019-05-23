@@ -5,9 +5,6 @@ class Doctor extends Employee {
     this._speciality = speciality;
     this._salary = 90000;
   }
-  get doctor() {
-    return this._name;
-  }
   get doctorSalary() {
     return this._salary;
   }

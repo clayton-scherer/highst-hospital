@@ -2,7 +2,7 @@ const Doctor = require("../src/doctor");
 describe("doctor", () => {
   test("should return is a doctor status.", () => {
     const underTest = new Doctor("Mike");
-    const actual = underTest.doctor;
+    const actual = underTest.name;
     expect(actual).toBe("Mike");
   });
 

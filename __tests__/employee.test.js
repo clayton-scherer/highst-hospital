@@ -3,7 +3,7 @@ const Employee = require("../src/employee");
 describe("employee", () => {
   test("should return is an Employee status.", () => {
     const underTest = new Employee("John");
-    const actual = underTest.employee;
+    const actual = underTest.name;
     expect(actual).toBe("John");
   });
 

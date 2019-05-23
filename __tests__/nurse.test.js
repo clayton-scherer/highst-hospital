@@ -3,7 +3,7 @@ const Nurse = require("../src/nurse");
 describe("nurse", () => {
   test("should return is a nurse status.", () => {
     const underTest = new Nurse("Jackie");
-    const actual = underTest.nurse;
+    const actual = underTest.name;
     expect(actual).toBe(`Jackie`);
   });
 

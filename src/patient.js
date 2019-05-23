@@ -6,7 +6,7 @@ class Patient {
     this._BLOOD_LEVEL = 20;
     this._HEALTH_LEVEL = 10;
   }
-  get patient() {
+  get name() {
     return this._name;
   }
   get bloodlevel() {
