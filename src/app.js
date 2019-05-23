@@ -13,7 +13,9 @@ const Surgeon = require("../src/surgeon");
 textColors = [
   (blueText = chalk.blue),
   (redText = chalk.red),
-  (greenText = chalk.green)
+  (greenText = chalk.green),
+  (cyanText = chalk.cyan),
+  (underlineText = chalk.underline)
 ];
 
 const Patients = {};
@@ -39,37 +41,41 @@ Staff.Neuro_Surgeon = new Surgeon("Christoph", 98754, "Neurology", true);
 const canAdministerCare = [
   Staff.Nurse,
   Staff.Floor_Nurse,
-  Staff.Charge_Nurse,
   Staff.Doctor,
-  Staff.Surgeon,
-  Staff.Neuro_Surgeon
+  Staff.Surgeon
 ];
 
 console.log(
-  `\nWelcome to High St Hospitals' department of Records and Data.
-   \nWe pride ourselves on having a sleek yet functional data management system.`
+  `\nWelcome to High St Hospitals' department of Records and Data.\n
+   \nWe pride ourselves on having a ${underlineText(
+     "sleek"
+   )} yet ${underlineText("functional")} data management system.\n
+   \nTry out our proprietary ${cyanText(
+     "color-coded"
+   )} menu to navigate through our records!!!`
 );
 
-userInput = input.question(`
+let loopCondition = true;
+// Needs to return to userInput after each case is evaluated... currently infinite loop - see line 84.
+while (loopCondition) {
+  const userInput = input.question(`\n
 Enter ${greenText("Staff")} to list our current employees.\n 
 Enter ${greenText("Patients")} to list our current patients.\n
 Enter ${blueText("1")} for our Staff qualified to draw blood.\n
-Enter ${blueText("2")} for our staff qualified to administer care.\n
+Enter ${blueText("2")} for our staff qualified to care for our patients.\n
 Enter ${redText("3")} to exit our robust databse.\n`);
 
-let loopCondition = true;
-// Needs to be able to return to userInput after each case is evaluated... currently infinite loop - see line 84.
-while (loopCondition) {
   switch (userInput) {
     case "Staff":
-      console.log(`These are our current full time ${greenText("Staff")}.\n`);
+      console.log(`\nThese are our current full time ${greenText("Staff")}.\n`);
       console.table(Staff);
       break;
     case "Patients":
-      console.log(`These are our current ${greenText("Patients")}.\n`);
+      console.log(`\nThese are our current ${greenText("Patients")}.\n`);
       console.table(Patients);
       break;
     case "1":
+      // Would like to make this case evaluate canAdministerCare array with a for loop to print out each name for every member in the array.
       console.log(
         `\nWe have ${
           canAdministerCare.length
@@ -80,16 +86,16 @@ while (loopCondition) {
       console.log(
         `\nWe have ${
           canAdministerCare.length
-        } Staff members qualified to administer care.\n`
+        } Staff members qualified in Advanced Lifesaving procedures.\n`
       );
       break;
     case "3":
       console.log(
         `\nThank you for choosing High st. Hospital as your provider of superb healthcare!\n`
       );
+      loopCondition = false;
       break;
     default:
       console.log(`\nPlease enter a vaild search paramater.\n`);
-  }
-  break; //holder to prevent infinite while loop...
+  } //holder to prevent infinite while loop?...
 }
