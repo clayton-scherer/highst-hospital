@@ -4,7 +4,7 @@ describe("Janitor", () => {
   test("should return is a Janitor status.", () => {
     const underTest = new Janitor("Rick");
     const actual = underTest.janitor;
-    expect(actual).toBe("Rick is a Janitor");
+    expect(actual).toBe("Rick");
   });
 
   test("should return employee Id Number.", () => {
@@ -16,7 +16,7 @@ describe("Janitor", () => {
   test("Should return Janitor salary.", () => {
     const underTest = new Janitor("Rick", 9732);
     const actual = underTest.janitorSalary;
-    expect(actual).toBe(`Janitors make 40000`);
+    expect(actual).toEqual(40000);
   });
 
   test("Should return if Janitor is occupied with sweeping floors.", () => {

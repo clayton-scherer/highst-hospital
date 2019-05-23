@@ -6,7 +6,7 @@ describe("patient", () => {
   test("should return is a patient status.", () => {
     const underTest = new Patient("Jane");
     const actual = underTest.patient;
-    expect(actual).toBe("Jane is a Patient");
+    expect(actual).toBe("Jane");
   });
 
   test("should return patient blood level.", () => {

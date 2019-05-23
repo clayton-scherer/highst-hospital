@@ -6,7 +6,7 @@ class Employee {
     this._idNumber = idNumber;
   }
   get employee() {
-    return `${this._name} is an Employee`;
+    return this._name;
   }
   get idNumber() {
     return this._idNumber;

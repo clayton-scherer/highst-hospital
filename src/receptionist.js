@@ -6,10 +6,10 @@ class Receptionist extends Employee {
     this._salary = 45000;
   }
   get receptionist() {
-    return `${this._name} is a Receptionist`;
+    return this._name;
   }
   get receptionistSalary() {
-    return `Receptionists make ${this._salary}`;
+    return this._salary;
   }
   get phoneCall() {
     return this._phoneCall;

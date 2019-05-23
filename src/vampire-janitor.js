@@ -4,7 +4,7 @@ class VampireJanitor extends Janitor {
     super(name, idNumber, cleaning);
   }
   get vampireJanitor() {
-    return `${this._name} is a VampireJanitor`;
+    return this._name;
   }
 }
 module.exports = VampireJanitor;

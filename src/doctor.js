@@ -6,10 +6,10 @@ class Doctor extends Employee {
     this._salary = 90000;
   }
   get doctor() {
-    return `${this._name} is a Doctor`;
+    return this._name;
   }
   get doctorSalary() {
-    return `Doctors make ${this._salary}`;
+    return this._salary;
   }
   get speciality() {
     return this._speciality;
