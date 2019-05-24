@@ -5,6 +5,7 @@ class Doctor extends Employee {
     super(name, idNumber);
     this._speciality = speciality;
     this._salary = 90000;
+    // Object.assign(this, careForPatient)
   }
   get doctorSalary() {
     return this._salary;
@@ -12,6 +13,7 @@ class Doctor extends Employee {
   get speciality() {
     return this._speciality;
   }
+  // Create mixin for careForPatient and canDrawBlood
   careForPatient(patientName) {
     return (Patient._HEALTH_LEVEL += 10);
   }
