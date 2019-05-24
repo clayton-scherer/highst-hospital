@@ -18,62 +18,61 @@ textColors = [
   (underlineText = chalk.underline)
 ];
 
-const Patients = {};
-Patients.Room_101 = new Patient("Matt");
-Patients.Room_102 = new Patient("Ellie");
-Patients.Room_103 = new Patient("Lauren");
+const Matt = new Patient("Matt");
+const Ellie = new Patient("Ellie");
+const Lauren = new Patient("Lauren");
+const Jane = new Patient("Jane");
+const Mack = new Employee("Mack", "trainee");
+const Mike = new Janitor("Mike", 907, true);
+const Savi = new VampireJanitor("Savi", 743, false);
+const Mark = new Receptionist("Mark", 3765, false);
+const Susan = new Nurse(
+  "Susan",
+  9752,
+  "Matt" + ", " + "Ellie" + ", " + "Lauren"
+);
+const Brutus = new Doctor("Brutus", 75340, "Cardio");
+const Alexander = new Surgeon("Alexander", 94637, "OBGYN", false);
 
-const Staff = {};
-Staff.Employee = new Employee("Mack", "trainee");
-Staff.Janitor = new Janitor("Mike", 907, true);
-Staff.Vampire_Janitor = new VampireJanitor("Savi", 743, false);
-Staff.Receptionist = new Receptionist("Mark", 3765, false);
-Staff.Head_Receptionist = new Receptionist("Sally", 8546, true);
-Staff.Nurse = new Nurse("Susan", 9752, Patients.Room_102._name);
-Staff.Floor_Nurse = new Nurse("Mary", 5197, Patients.Room_103._name);
-Staff.Charge_Nurse = new Nurse("Bonnie", 4913, Patients.Room_101._name);
-Staff.Doctor = new Doctor("Brutus", 75340, "Cardio");
-Staff.Surgeon = new Surgeon("Alexander", 94637, "OBGYN", false);
-Staff.Neuro_Surgeon = new Surgeon("Christoph", 98754, "Neurology", true);
+const Patients = [Matt, Ellie, Lauren];
 
-//console.table(Staff.Surgeon); prints exclusively Alexanders's table.
+const Staff = [Mack, Mike, Savi, Mark, Susan, Brutus, Alexander];
 
-const canAdministerCare = [
-  Staff.Nurse,
-  Staff.Floor_Nurse,
-  Staff.Doctor,
-  Staff.Surgeon
-];
+const canAdministerCare = [Susan.name, Brutus.name, Alexander.name];
+console.table(canAdministerCare);
 
 welcomeMessage();
 
 let loopCondition = true;
-// Needs to return to userInput after each case is evaluated... currently infinite loop - see line 84.
+
 while (loopCondition) {
   const userInput = mainMenu();
 
   switch (userInput) {
-    case "Staff":
-      console.log(`\nThese are our current full time ${greenText("Staff")}.\n`);
+    case "staff":
       console.table(Staff);
+      console.log(`\nThese are our current full time ${greenText("Staff")}.`);
       break;
-    case "Patients":
-      console.log(`\nThese are our current ${greenText("Patients")}.\n`);
+    case "patients":
       console.table(Patients);
+      console.log(`\nThese are our current ${greenText("Patients")}.\n`);
+      console.log(
+        `${greenText(Susan.name)} is currently looking after these patients.`
+      );
       break;
     case "1":
-      // Would like to make this case evaluate canAdministerCare array with a for loop to print out each name for every member in the array.
       console.log(
-        `\nWe have ${
-          canAdministerCare.length
-        } Staff members qualified to draw blood\n`
+        `\nThese ${greenText("Staff")} members qualified to draw blood\n`
       );
+      console.log(`${greenText(Susan.name)}`);
+      console.log(`${greenText(Brutus.name)}`);
+      console.log(`${greenText(Alexander.name)}`);
       break;
     case "2":
       console.log(
-        `\nWe have ${
-          canAdministerCare.length
-        } Staff members qualified in Advanced Lifesaving procedures.\n`
+        `\nWe have ${canAdministerCare.length} ${greenText(
+          "Staff"
+        )} members certified in Advanced Lifesaving procedures.`
       );
       break;
     case "3":
@@ -86,13 +85,14 @@ while (loopCondition) {
       console.log(`\nPlease enter a vaild search paramater.\n`);
   } //holder to prevent infinite while loop?...
 }
+
 function mainMenu() {
   return input.question(`\n
-Enter ${greenText("Staff")} to list our current employees.\n 
-Enter ${greenText("Patients")} to list our current patients.\n
-Enter ${blueText("1")} for our Staff qualified to draw blood.\n
-Enter ${blueText("2")} for our staff qualified to care for our patients.\n
-Enter ${redText("3")} to exit our robust databse.\n >> :  `);
+Enter ${greenText("staff")} to list our current employees.\n 
+Enter ${greenText("patients")} to list our current patients.\n
+Enter ${blueText("'1'")} for our Staff qualified to draw blood.\n
+Enter ${blueText("'2'")} for our staff qualified to care for our patients.\n
+Enter ${redText("'3'")} to exit our robust databse.\n\n >> :  `);
 }
 
 function welcomeMessage() {

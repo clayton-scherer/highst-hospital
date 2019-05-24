@@ -1,10 +1,8 @@
-// Write my patient class,...
-
 class Patient {
-  constructor(name) {
+  constructor(name, BLOOD_LEVEL = 20, HEALTH_LEVEL = 10) {
     this._name = name;
-    this._BLOOD_LEVEL = 20;
-    this._HEALTH_LEVEL = 10;
+    this._BLOOD_LEVEL = BLOOD_LEVEL;
+    this._HEALTH_LEVEL = HEALTH_LEVEL;
   }
   get name() {
     return this._name;
