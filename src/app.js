@@ -21,13 +21,11 @@ textColors = [
 const Matt = new Patient("Matt");
 const Ellie = new Patient("Ellie");
 const Lauren = new Patient("Lauren");
+const Mack = new Employee("Mack", "trainee");
 const Mike = new Janitor("Mike", 907, true);
 const Savi = new VampireJanitor("Savi", 743, false);
-const Mark = new Receptionist("Mark", 3765, true);
-const Susan = new Nurse(
-  "Susan",
-  9752,
-  "Matt" + ", " + "Ellie" + ", " + "Lauren"
+const Mark = new Receptionist("Mark", 3765, false);
+const Susan = new Nurse("Susan",9752,"Matt" + ", " + "Ellie" + ", " + "Lauren"
 );
 const Brutus = new Doctor("Brutus", 75340, "Cardio");
 const Alexander = new Surgeon("Alexander", 94637, "OBGYN", true);
