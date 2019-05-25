@@ -1,5 +1,5 @@
-const Employee = require("../src/employee");
-const Patient = require("../src/patient");
+const Employee = require("./employee");
+// const Patient = require("../patient");
 class Doctor extends Employee {
   constructor(name, idNumber, speciality) {
     super(name, idNumber);
@@ -13,7 +13,7 @@ class Doctor extends Employee {
     return this._speciality;
   }
   careForPatient(patientName) {
-    return (Patient._HEALTH_LEVEL += 10);
+    return patientName._HEALTH_LEVEL += 10;
   }
 }
 module.exports = Doctor;

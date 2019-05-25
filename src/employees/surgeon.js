@@ -1,4 +1,4 @@
-const Doctor = require("../src/doctor");
+const Doctor = require("../employees/doctor");
 class Surgeon extends Doctor {
   constructor(name, idNumber, speciality, operating) {
     super(name, idNumber);

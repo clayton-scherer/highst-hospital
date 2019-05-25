@@ -1,4 +1,5 @@
-const Doctor = require("../src/doctor");
+const Doctor = require("../src/employees/doctor");
+const Patient = require("../src/patient");
 
 describe("doctor", () => {
   test("should return is a doctor status.", () => {
@@ -23,5 +24,12 @@ describe("doctor", () => {
     const underTest = new Doctor("Mike", 6587, "Oncology");
     const actual = underTest.speciality;
     expect(actual).toBe("Oncology");
+  });
+
+  test("Should return patient health plus 10", () => {
+    const underTest = new Doctor("Mike", 6587, "Oncology");
+    const Jane = new Patient("Jane")
+    const actual = underTest.careForPatient(Jane);
+    expect(actual).toEqual(20);
   });
 });

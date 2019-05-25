@@ -1,4 +1,4 @@
-const Receptionist = require("../src/receptionist");
+const Receptionist = require("../src/employees/receptionist");
 
 describe("Receptionist", () => {
   test("should return is a Receptionist status.", () => {

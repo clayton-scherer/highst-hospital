@@ -2,13 +2,13 @@
 const input = require("readline-sync");
 const chalk = require("chalk");
 const Patient = require("../src/patient");
-const Employee = require("../src/employee");
-const Janitor = require("../src/janitor");
-const VampireJanitor = require("../src/vampire-janitor");
-const Receptionist = require("../src/receptionist");
-const Nurse = require("../src/nurse");
-const Doctor = require("../src/doctor");
-const Surgeon = require("../src/surgeon");
+const Employee = require("./employees/employee");
+const Janitor = require("./employees/janitor");
+const VampireJanitor = require("./employees/vampire-janitor");
+const Receptionist = require("./employees/receptionist");
+const Nurse = require("./employees/nurse");
+const Doctor = require("../src/employees/doctor");
+const Surgeon = require("./employees/surgeon");
 
 textColors = [
   (blueText = chalk.blue),
@@ -21,25 +21,22 @@ textColors = [
 const Matt = new Patient("Matt");
 const Ellie = new Patient("Ellie");
 const Lauren = new Patient("Lauren");
-const Jane = new Patient("Jane");
-const Mack = new Employee("Mack", "trainee");
 const Mike = new Janitor("Mike", 907, true);
 const Savi = new VampireJanitor("Savi", 743, false);
-const Mark = new Receptionist("Mark", 3765, false);
+const Mark = new Receptionist("Mark", 3765, true);
 const Susan = new Nurse(
   "Susan",
   9752,
   "Matt" + ", " + "Ellie" + ", " + "Lauren"
 );
 const Brutus = new Doctor("Brutus", 75340, "Cardio");
-const Alexander = new Surgeon("Alexander", 94637, "OBGYN", false);
+const Alexander = new Surgeon("Alexander", 94637, "OBGYN", true);
 
 const Patients = [Matt, Ellie, Lauren];
 
-const Staff = [Mack, Mike, Savi, Mark, Susan, Brutus, Alexander];
+const Staff = [Mike, Savi, Mark, Susan, Brutus, Alexander];
 
 const canAdministerCare = [Susan.name, Brutus.name, Alexander.name];
-console.table(canAdministerCare);
 
 welcomeMessage();
 
@@ -62,11 +59,9 @@ while (loopCondition) {
       break;
     case "1":
       console.log(
-        `\nThese ${greenText("Staff")} members qualified to draw blood\n`
+        `\nThese ${greenText("Staff")} members are qualified to draw blood\n`
       );
-      console.log(`${greenText(Susan.name)}`);
-      console.log(`${greenText(Brutus.name)}`);
-      console.log(`${greenText(Alexander.name)}`);
+      console.table(canAdministerCare);
       break;
     case "2":
       console.log(

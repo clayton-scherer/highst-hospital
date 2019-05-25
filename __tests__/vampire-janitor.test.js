@@ -1,4 +1,4 @@
-const VampireJanitor = require("../src/vampire-janitor");
+const VampireJanitor = require("../src/employees/vampire-janitor");
 
 describe("VampireJanitor", () => {
   test("should return is a VampireJanitor status.", () => {

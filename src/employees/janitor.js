@@ -1,4 +1,4 @@
-const Employee = require("../src/employee");
+const Employee = require("./employee");
 class Janitor extends Employee {
   constructor(name, idNumber, cleaning) {
     super(name, idNumber);
