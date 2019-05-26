@@ -1,10 +1,14 @@
 const Doctor = require("../employees/doctor");
+const careForPatient = require("../mixins/careForPatients");
+const drawBlood = require("../mixins/drawBlood");
 class Surgeon extends Doctor {
   constructor(name, idNumber, speciality, operating) {
     super(name, idNumber);
     this._speciality = speciality;
     this._operating = operating;
     this._salary = 120000;
+    Object.assign(this, careForPatient);
+    Object.assign(this, drawBlood);
   }
   get surgeonSalary() {
     return this._salary;
