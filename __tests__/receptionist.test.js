@@ -1,9 +1,9 @@
-const Receptionist = require("../src/receptionist");
+const Receptionist = require("../src/employees/receptionist");
 
 describe("Receptionist", () => {
   test("should return is a Receptionist status.", () => {
     const underTest = new Receptionist("Sally");
-    const actual = underTest.receptionist;
+    const actual = underTest.name;
     expect(actual).toBe("Sally");
   });
 

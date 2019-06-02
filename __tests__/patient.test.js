@@ -5,7 +5,7 @@ const Patient = require("../src/patient");
 describe("patient", () => {
   test("should return is a patient status.", () => {
     const underTest = new Patient("Jane");
-    const actual = underTest.patient;
+    const actual = underTest.name;
     expect(actual).toBe("Jane");
   });
 

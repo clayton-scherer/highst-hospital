@@ -1,9 +1,9 @@
-const VampireJanitor = require("../src/vampire-janitor");
+const VampireJanitor = require("../src/employees/vampire-janitor");
 
 describe("VampireJanitor", () => {
   test("should return is a VampireJanitor status.", () => {
     const underTest = new VampireJanitor("James");
-    const actual = underTest.vampireJanitor;
+    const actual = underTest.name;
     expect(actual).toBe("James");
   });
 

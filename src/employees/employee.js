@@ -5,7 +5,7 @@ class Employee {
     this._name = name;
     this._idNumber = idNumber;
   }
-  get employee() {
+  get name() {
     return this._name;
   }
   get idNumber() {
