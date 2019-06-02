@@ -1,5 +1,6 @@
 module.exports = {
-    drawBlood(patientName) {
-      return (patientName._BLOOD_LEVEL -= 3);
-    }
-  };
+  drawBlood(patientName) {
+    patientName._BLOOD_LEVEL -= 3;
+    if (patientName._BLOOD_LEVEL >= 100) patientName._BLOOD_LEVEL = 100;
+  }
+};

@@ -1,5 +1,6 @@
 module.exports = {
   careForPatient(patientName) {
-    return (patientName._HEALTH_LEVEL += 6);
+    patientName._HEALTH_LEVEL += 6;
+    if (patientName._HEALTH_LEVEL >= 100) patientName._HEALTH_LEVEL = 100;
   }
 };
