@@ -41,7 +41,7 @@ Staff.Nurse = Susan;
 Staff.Doctor = Brutus;
 Staff.Surgeon = Alexander;
 const canAdministerCare = [Susan, Brutus, Alexander];
-
+//Game loop
 welcomeMessage();
 let loopCondition = true;
 while (loopCondition) {
@@ -109,7 +109,7 @@ while (loopCondition) {
   }
   patientTick();
 }
-
+// Global Functions
 function patientTick() {
   Susan.patients.forEach(patient => {
     patient.tick();
