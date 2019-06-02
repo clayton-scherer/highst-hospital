@@ -29,7 +29,7 @@ describe("doctor", () => {
     const underTest = new Doctor("Mike", 6587, "Oncology");
     const Jane = new Patient("Jane");
     const actual = underTest.drawBlood(Jane);
-    expect(actual).toEqual(17);
+    expect(actual).toBe(17);
   });
 
   test("Should return patient health plus 6", () => {

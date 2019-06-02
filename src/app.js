@@ -32,7 +32,7 @@ const Alexander = new Surgeon("Alexander", 94637, "OBGYN", true);
 Susan.patients.push(Matt);
 Susan.patients.push(Ellie);
 Susan.patients.push(Lauren);
-//Organazing Staff Members
+//Organizing Staff Members
 const Staff = [];
 Staff.Janitor = Mike;
 Staff.VampireJanitor = Savi;
@@ -105,7 +105,7 @@ while (loopCondition) {
 
       break;
     default:
-      console.log(`\nPlease enter a vaild search paramater.\n`);
+      console.log(`\nPlease enter a valid search parameter.\n`);
   }
   patientTick();
 }
@@ -129,7 +129,7 @@ Enter ${greenText("patients")} to list our current patients.\n
 Enter ${blueText("'1'")} for our Staff qualified to draw blood.\n
 Enter ${blueText("'2'")} for our staff qualified to care for our patients.\n
 Enter ${blueText("'3'")} to witness our Doctor's expertise!\n
-Enter ${redText("'4'")} to exit our robust databse.\n\n >> :  `);
+Enter ${redText("'4'")} to exit our robust database.\n\n >> :  `);
 }
 
 function welcomeMessage() {
