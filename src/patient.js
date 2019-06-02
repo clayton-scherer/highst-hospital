@@ -13,5 +13,10 @@ class Patient {
   get healthlevel() {
     return this._HEALTH_LEVEL;
   }
+  tick() {
+    (this._HEALTH_LEVEL += 4), (this._BLOOD_LEVEL += 4);
+    if (this._HEALTH_LEVEL >= 100) this._HEALTH_LEVEL = 100;
+    if (this._BLOOD_LEVEL >= 100) this._BLOOD_LEVEL = 100;
+  }
 }
 module.exports = Patient;

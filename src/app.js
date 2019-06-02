@@ -102,7 +102,13 @@ while (loopCondition) {
     default:
       console.log(`\nPlease enter a vaild search paramater.\n`);
   }
-  tick();
+  patientTick();
+}
+
+function patientTick() {
+  Patients.forEach(patient => {
+    patient.tick();
+  });
 }
 
 function staffQualified() {
@@ -111,11 +117,11 @@ function staffQualified() {
   });
 }
 
-function tick() {
-  Patients.forEach(patientName => {
-    return (patientName._HEALTH_LEVEL += 2), (patientName._BLOOD_LEVEL += 4);
-  });
-}
+// function tick() {
+//   Patients.forEach(patientName => {
+//     return (patientName._HEALTH_LEVEL += 2), (patientName._BLOOD_LEVEL += 4);
+//   });
+// }
 
 function mainMenu() {
   return input.question(`\n
