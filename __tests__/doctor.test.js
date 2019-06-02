@@ -1,5 +1,5 @@
 const Doctor = require("../src/employees/doctor");
-const Patient = require("../src/patient")
+const Patient = require("../src/patient");
 describe("doctor", () => {
   test("should return is a doctor status.", () => {
     const underTest = new Doctor("Mike");
