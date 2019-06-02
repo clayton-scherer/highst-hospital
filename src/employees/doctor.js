@@ -1,7 +1,6 @@
 const Employee = require("./employee");
-const careForPatient = require("../mixins/careForPatients");
-const drawBlood = require("../mixins/drawBlood");
-// const Patient = require("../patient");
+const careForPatient = require("../mixins/care-for-patients");
+const drawBlood = require("../mixins/draw-blood");
 class Doctor extends Employee {
   constructor(name, idNumber, speciality) {
     super(name, idNumber);

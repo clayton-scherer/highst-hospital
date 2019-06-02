@@ -9,7 +9,6 @@ const Receptionist = require("./employees/receptionist");
 const Nurse = require("./employees/nurse");
 const Doctor = require("../src/employees/doctor");
 const Surgeon = require("./employees/surgeon");
-
 // Chalk Colors
 textColors = [
   (blueText = chalk.blue),

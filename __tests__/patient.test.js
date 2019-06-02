@@ -1,5 +1,3 @@
-// Define my requirements, then describe and write my tests.
-// If i can pull class by class from another file.
 const Patient = require("../src/patient");
 
 describe("patient", () => {
