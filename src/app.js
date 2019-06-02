@@ -1,4 +1,5 @@
-// Require statements at head, handle input and ouput of application.
+// Hospital App
+// Requirements
 const input = require("readline-sync");
 const chalk = require("chalk");
 const Patient = require("../src/patient");
@@ -9,6 +10,7 @@ const Nurse = require("./employees/nurse");
 const Doctor = require("../src/employees/doctor");
 const Surgeon = require("./employees/surgeon");
 
+// Chalk Colors
 textColors = [
   (blueText = chalk.blue),
   (redText = chalk.red),
@@ -16,30 +18,32 @@ textColors = [
   (cyanText = chalk.cyan),
   (underlineText = chalk.underline)
 ];
-
+// Initalizing Patients
 const Matt = new Patient("Matt");
 const Ellie = new Patient("Ellie");
 const Lauren = new Patient("Lauren");
-
+// Initalizing Staff Members
 const Mike = new Janitor("Mike", 907, true);
 const Savi = new VampireJanitor("Savi", 743, false);
 const Mark = new Receptionist("Mark", 3765, false);
-const Susan = new Nurse(
-  "Susan",
-  9752,
-  "Matt" + ", " + "Ellie" + ", " + "Lauren"
-);
+const Susan = new Nurse("Susan", 9752);
 const Brutus = new Doctor("Brutus", 75340, "Cardio");
 const Alexander = new Surgeon("Alexander", 94637, "OBGYN", true);
-
-const Patients = [Matt, Ellie, Lauren];
-
-const Staff = [Mike, Savi, Mark, Susan, Brutus, Alexander];
-
+// Adding 3 Patients to Nurse Susan.
+Susan.patients.push(Matt);
+Susan.patients.push(Ellie);
+Susan.patients.push(Lauren);
+//Organazing Staff Members
+const Staff = [];
+Staff.Janitor = Mike;
+Staff.VampireJanitor = Savi;
+Staff.Receptionist = Mark;
+Staff.Nurse = Susan;
+Staff.Doctor = Brutus;
+Staff.Surgeon = Alexander;
 const canAdministerCare = [Susan, Brutus, Alexander];
 
 welcomeMessage();
-// setInterval(tick, 5000); call tick every 5 seconds. Also calls after exiting, no bueno...
 let loopCondition = true;
 while (loopCondition) {
   const userInput = mainMenu();
@@ -49,7 +53,7 @@ while (loopCondition) {
       console.log(`\nThese are our current full time ${greenText("Staff")}.`);
       break;
     case "patients":
-      console.table(Patients);
+      console.table(Susan.patients);
       console.log(`\nThese are our current ${greenText("Patients")}.\n`);
       console.log(
         `${greenText(Susan.name)} is currently looking after these patients.`
@@ -95,7 +99,9 @@ while (loopCondition) {
     case "4":
       loopCondition = false;
       console.log(
-        `\nThank you for choosing High st. Hospital as your provider of superb healthcare!\n`
+        `\nThank you for choosing High st. Hospital as your provider of ${cyanText(
+          "superb healthcare!"
+        )}\n`
       );
 
       break;
@@ -106,7 +112,7 @@ while (loopCondition) {
 }
 
 function patientTick() {
-  Patients.forEach(patient => {
+  Susan.patients.forEach(patient => {
     patient.tick();
   });
 }
@@ -116,12 +122,6 @@ function staffQualified() {
     console.log(`${greenText(Staff.name)}`);
   });
 }
-
-// function tick() {
-//   Patients.forEach(patientName => {
-//     return (patientName._HEALTH_LEVEL += 2), (patientName._BLOOD_LEVEL += 4);
-//   });
-// }
 
 function mainMenu() {
   return input.question(`\n
@@ -140,5 +140,5 @@ function welcomeMessage() {
    )} yet ${underlineText("functional")} data management system.\n
    \nTry out our proprietary ${cyanText(
      "color-coded"
-   )} menu to navigate through our records!!!`);
+   )} menu to navigate through our system!!!`);
 }

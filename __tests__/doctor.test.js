@@ -26,10 +26,17 @@ describe("doctor", () => {
     expect(actual).toBe("Oncology");
   });
 
-  test("Should return patient health plus 10", () => {
+  test("Should return patient blood minus 3", () => {
     const underTest = new Doctor("Mike", 6587, "Oncology");
-    const Jane = new Patient("Jane")
+    const Jane = new Patient("Jane");
+    const actual = underTest.drawBlood(Jane);
+    expect(actual).toEqual(17);
+  });
+
+  test("Should return patient health plus 6", () => {
+    const underTest = new Doctor("Mike", 6587, "Oncology");
+    const Jane = new Patient("Jane");
     const actual = underTest.careForPatient(Jane);
-    expect(actual).toEqual(20);
+    expect(actual).toEqual(16);
   });
 });

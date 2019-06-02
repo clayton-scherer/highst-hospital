@@ -1,4 +1,5 @@
 const Nurse = require("../src/employees/nurse");
+const Patient = require("../src/patient");
 
 describe("nurse", () => {
   test("should return is a nurse status.", () => {
@@ -20,8 +21,10 @@ describe("nurse", () => {
   });
 
   test("Should return Nurse's patients.", () => {
-    const underTest = new Nurse("Jackie", 2489, 3);
+    const underTest = new Nurse("Jackie", 2489);
+    const Mark = new Patient("Mark");
+    underTest.patients.push(Mark);
     const actual = underTest.patients;
-    expect(actual).toEqual(3);
+    expect(actual).toStrictEqual([Mark]);
   });
 });
